@@ -1,7 +1,7 @@
 REVISION=`git rev-parse HEAD`
 
-build:
-	docker build --no-cache --tag kong-application --build-arg REVISION=$(REVISION) .
+image:
+	docker build --no-cache --tag kong-application:$(REVISION) .
 
-dev-build:
-	docker build --tag kong-application --build-arg REVISION=$(REVISION) .
+dev-image:
+	docker build --tag kong-application:$(REVISION) .
